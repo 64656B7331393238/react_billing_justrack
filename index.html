@@ -10,12 +10,14 @@
     <script type="text/jsx">
         const app = document.getElementById('app');
 
-        function Header(props){
-            console.log(props);
+        function Header({title}){
+            return <h1>{title?title:'Default title'}</h1>;
         }
 
         function HomePage(){
-            return (<div><Header title='React 💙'/></div>);
+            return (<div><Header title='React 💙'/>
+                <Header title='A new title'/>
+            </div>);
         }
 
         ReactDOM.render(<HomePage/>, app);
